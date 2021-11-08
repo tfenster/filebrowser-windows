@@ -14,7 +14,7 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 
 RUN Write-Host "Downloading and expanding $($env:VERSION)"; `
     $url = ('https://github.com/filebrowser/filebrowser/releases/download/' + $env:VERSION + '/windows-amd64-filebrowser.zip'); `
-	New-Item -ItemType Directory -Path 'c:\filebrowser' | Out-Null ; `
+    New-Item -ItemType Directory -Path 'c:\filebrowser' | Out-Null ; `
     Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile 'c:\filebrowser.zip'; `
     Expand-Archive 'c:\filebrowser.zip' 'c:\filebrowser'; `
     Remove-Item 'c:\filebrowser.zip'; 
