@@ -19,4 +19,4 @@ RUN Write-Host "Downloading and expanding $($env:VERSION)"; `
     Expand-Archive 'c:\filebrowser.zip' 'c:\filebrowser'; `
     Remove-Item 'c:\filebrowser.zip'; 
 
-CMD c:\filebrowser\filebrowser.exe
+ENTRYPOINT [ "c:\\filebrowser\\filebrowser.exe" ]
